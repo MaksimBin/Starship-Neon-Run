@@ -1,8 +1,7 @@
 # Starship-Neon-Run
 ![Game Banner](starship-banner.jpeg)
 
-`markdown
-
+```html
 <span style="color:#00ff6a;">Starship Neon Run</span> 🚀
 
 <div style="display:flex;align-items:center;gap:12px;margin:12px 0;">
@@ -32,7 +31,7 @@ Starship Neon Run — ретро‑футуристическая аркада �
 <div style="display:inline-block;padding:10px 14px;border-radius:8px;background:#001f12;color:#00ff6a;font-weight:700;">
 Добавить на главный экран
 </div>
-
+```
 Как установить:
 1. Открой сайт в Chrome/Edge на Android или десктопе  
 2. В меню браузера выбери «Установить приложение»  
