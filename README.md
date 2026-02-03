@@ -1,2 +1,2 @@
 # Starship-Neon-Run
-![Game Banner] (starship-banner.jpeg)
+![Game Banner](starship-banner.jpeg)
