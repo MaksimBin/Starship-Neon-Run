@@ -58,5 +58,13 @@
   <div id="hud">Время: 0s</div>
 
   <script src="game.js" defer></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(reg => console.log('Service Worker registered:', reg.scope))
+      .catch(err => console.warn('Service Worker failed:', err));
+  }
+</script>
 </body>
 </html>
