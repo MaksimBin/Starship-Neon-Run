@@ -1,7 +1,7 @@
 # Starship-Neon-Run
 ![Game Banner](starship-banner.jpeg)
 
-```markdown
+`markdown
 
 <span style="color:#00ff6a;">Starship Neon Run</span> 🚀
 
@@ -143,6 +143,6 @@ if ('mediaSession' in navigator) {
 - Настроить CI для деплоя на GitHub Pages  
 
 ---
-```
+`
 
 
