@@ -55,3 +55,83 @@
     { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
   ]
 }
+```
+service-worker.js
+```js
+const CACHE_NAME = 'starship-neon-cache-v1';
+const urlsToCache = [
+  './',
+  './index.html',
+  './styles.css',
+  './game.js',
+  './manifest.json',
+  './icon-192.png',
+  './icon-512.png'
+];
+
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache)));
+});
+
+self.addEventListener('fetch', event => {
+  event.respondWith(caches.match(event.request).then(resp => resp || fetch(event.request)));
+});
+```
+
+Подключение в index.html
+В <head>:
+```html
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#00ff6a">
+```
+
+Внизу перед </body>:
+```html
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./service-worker.js')
+    .then(reg => console.log('Service Worker registered', reg.scope))
+    .catch(err => console.warn('Service Worker failed', err));
+}
+</script>
+```
+
+---
+
+<span style="color:#00ff6a;">🎵 Media Session API</span>
+
+```js
+if ('mediaSession' in navigator) {
+  navigator.mediaSession.metadata = new MediaMetadata({
+    title: currentTrack.title,
+    artist: currentTrack.artist,
+    artwork: [
+      { src: 'icon-192.png', sizes: '192x192', type: 'image/png' },
+      { src: 'icon-512.png', sizes: '512x512', type: 'image/png' }
+    ]
+  });
+
+  navigator.mediaSession.setActionHandler('play', () => audio.play());
+  navigator.mediaSession.setActionHandler('pause', () => audio.pause());
+  navigator.mediaSession.setActionHandler('previoustrack', () => playPreviousTrack());
+  navigator.mediaSession.setActionHandler('nexttrack', () => playNextTrack());
+}
+```
+
+---
+
+<span style="color:#00ff6a;">📌 Иконки</span>
+
+- icon-192.png — для Android и favicon  
+- icon-512.png — для PWA и десктоп‑установок  
+- Используйте прозрачный PNG, чтобы избежать белых углов  
+
+```html
+<link rel="icon" href="icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="icon-192.png">
+```
+
+---
+
+
+
