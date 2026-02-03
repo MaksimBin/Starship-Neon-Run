@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Starship — Neon Run</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <!-- Start screen -->
+  <div id="startScreen" role="dialog" aria-label="Start menu">
+    <div class="panel">
+      <div class="title">
+        <div class="logo" aria-hidden="true">
+          <div class="badge" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L15 8L22 9L17 13L18 20L12 17L6 20L7 13L2 9L9 8L12 2Z" fill="#00ff6a" opacity="0.95"/>
+            </svg>
+          </div>
+          <div>
+            <h1>STARSHIP — NEON RUN</h1>
+            <div class="subtitle">Вертикальный рейс сквозь неоновую бездну</div>
+          </div>
+        </div>
+        <div class="hint">Нажми «Играть» — игра откроется в полноэкранном режиме. Музыка будет играть в цикле.</div>
+      </div>
+
+      <div class="controls" aria-hidden="false">
+        <button id="startBtn" class="btn" aria-label="Играть">
+          <span class="pulse" aria-hidden="true"></span>
+          <span>Играть</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Over modal -->
+  <div id="gameOverModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="go-card" role="document">
+      <h2 class="go-title">GAME OVER</h2>
+      <p class="go-sub">Ты продержался</p>
+      <div id="goScore" class="go-score">0 секунд</div>
+      <div class="go-actions">
+        <button id="goRestart" class="btn-primary">Начать заново</button>
+        <button id="goMenu" class="btn-ghost">В главное меню</button>
+      </div>
+      <div class="small-note">Музыка остановлена. Нажми «Начать заново», чтобы попробовать ещё раз.</div>
+    </div>
+  </div>
+
+  <!-- Audio element -->
+  <audio id="bgAudio" src="/Tony_Anthem_Killer_Hertz_feat_Doktor_-_Run_for_Cover_68339871.mp3" loop preload="auto"></audio>
+
+  <div id="hud">Время: 0s</div>
+
+  <script src="game.js" defer></script>
+</body>
+</html>
