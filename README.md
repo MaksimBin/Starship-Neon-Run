@@ -1,9 +1,9 @@
 # Starship-Neon-Run
 ![Game Banner](starship-banner.jpeg)
 
-```html
+```HTML
 <span style="color:#00ff6a;">Starship Neon Run</span> 🚀
-
+```
 <div style="display:flex;align-items:center;gap:12px;margin:12px 0;">
   <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#002b1a,#00402a);display:flex;align-items:center;justify-content:center;color:#00ff6a;font-weight:800;font-size:24px;">
     🎮
